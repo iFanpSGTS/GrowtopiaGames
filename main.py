@@ -1,6 +1,6 @@
 from discord.ext import commands; import discord; import os
 
-prefix = "janda/"
+prefix = "bot/"
 bot = commands.Bot(command_prefix=prefix)
 bot.remove_command("help")
 
