@@ -14,7 +14,7 @@ async def on_ready():
 @bot.command()
 async def help(ctx):
     embed = discord.Embed(title="Help", color=0x3fbba3)
-    embed.add_field(name="Growtopia Games", value="CSN | QQ | DEPO | BAL | INFO | STORE", inline=False)
+    embed.add_field(name="Growtopia Games | Commands list",value="CSN\nQQ\nDEPOSIT\nBAL\nINFO\nSTORE",inline=False)
     embed.set_footer(text="Help | Information about useable commands")
     await ctx.send(embed=embed)
     
