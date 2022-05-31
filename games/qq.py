@@ -15,7 +15,7 @@ class QQ(commands.Cog):
                 await ctx.send("You can't play without money.")
             else:
                 user = random.randint(0, 36)
-                bot = random.randint(0, 36)
+                bot = random.randint(3, 36)
                 
                 user_angkaBelakang = "".join([str(user)])[1:]
                 bot_angkaBelakang = "".join([str(bot)])[1:]
