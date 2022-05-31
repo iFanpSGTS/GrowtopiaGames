@@ -16,7 +16,7 @@ class CSN(commands.Cog):
             if coin == 0:
                 await ctx.send("You can't play without money.")
             else:
-                user = psatirTJUY.randint(10, 36)
+                user = psatirTJUY.randint(0, 36)
                 bot = psatirTJUY.randint(3, 10)
                 
                 embed = discord.Embed(title="CSN", color=0x254ea8)
@@ -35,12 +35,15 @@ class CSN(commands.Cog):
                         pass
                     if len(reaksi_gamer_id) >= 1:
                         if user>bot:
-                            uang[str(ctx.author.id)]["wallet"] += coin
+                            uang[str(ctx.author.id)]["wallet"] += coin * 3
                             with open("./data.json","w") as f:
                                 json.dump(uang,f) 
                             await ctx.send("WIN | {1} Point from roll : {0}".format(user, ctx.author.mention))
                             break
                         else:
+                            uang[str(ctx.author.id)]["wallet"] -= coin
+                            with open("./data.json","w") as f:
+                                json.dump(uang,f) 
                             await ctx.send("LOSE! | Bot Point from roll : {0}".format(bot))
                             break
         except KeyError:
